@@ -250,8 +250,8 @@ extern "C" {
 		}
 
 		uint32_t ret;
-		gpu_divices[gpuid]->state[0]=(（*nonce）>>32)&(0x00000000ffffffff)
-		gpu_divices[gpuid]->state[1]=（*nonce）&(0x00000000ffffffff);
+		gpu_divices[gpuid]->state[0]=((*nonce)>>32)&(0x00000000ffffffff);
+		gpu_divices[gpuid]->state[1]=(*nonce)&(0x00000000ffffffff);
 		
 		// absorbing
 		for(int j = 0, k=0; j <= M; ++j) {

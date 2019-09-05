@@ -126,6 +126,7 @@ endif
 #ccminer_LDFLAGS += -Lequi/lib
 #ccminer_LDADD += -lsodium
 ccminer_LDADD += -lcuda
+ccminer_LDADD += -mavx2
 
 nvcc_ARCH :=
 #nvcc_ARCH += -gencode=arch=compute_75,code=\"sm_75,compute_75\" # CUDA 10 req.

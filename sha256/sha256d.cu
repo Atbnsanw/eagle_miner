@@ -77,7 +77,7 @@ extern "C" int scanhash_sha256d(int thr_id, struct work* work, uint32_t max_nonc
 				work_set_target_ratio(work, vhash);
 				if (work->nonces[1] != UINT32_MAX) {
 					endiandata[19] = swab32(work->nonces[1]);
-					sha256d_hash(vhash, endiandata);
+					sha256d_hash(vhash, endiandata);//output input
 					if (vhash[7] <= ptarget[7] && fulltest(vhash, ptarget)) {
 						work->valid_nonces++;
 						bn_set_target_ratio(work, vhash, 1);
