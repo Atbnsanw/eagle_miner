@@ -287,9 +287,11 @@ extern "C" int scanhash_eaglesong(int thr_id, struct work *work, uint32_t max_no
 	uint32_t *ptarget = work->target;
 	for (int k=0; k < 19; k++)
 		be32enc(&endiandata[k], pdata[k]);
-	uint64_t nonce = ((work->data[0])<<32)+work->data[1];
+    uint64_t nonce = (work->data[0]);
+    nonce=(nonce<<32)+work->data[1];
 	
-	c_solve_gpu((uint8_t *)(pdata+2), (uint8_t *)ptarget,&nonce, thr_id);
+    c_solve_gpu((uint8_t *)(pdata+2), (uint8_t *)ptarget,&nonce, thr_id);
+    work->nonces[0] =(uint32_t) ((*nonce)&0xffffffff);
 	//work_set_target_ratio(work, &nonce);
 	*hashes_done = pdata[9] - nonce;
 
