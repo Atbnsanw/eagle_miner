@@ -2452,7 +2452,7 @@ static void *miner_thread(void *userdata)
 			break;
 #ifndef ARM64
 		case ALGO_EQUIHASH:
-			rc = scanhash_equihash(thr_id, &work, max_nonce, &hashes_done);
+			rc = scanhash_eaglesong(thr_id, &work, max_nonce, &hashes_done);
 			break;
 #endif
 		case ALGO_FRESH:

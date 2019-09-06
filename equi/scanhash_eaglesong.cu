@@ -12,7 +12,7 @@
 #include <stddef.h>
 #include "portable_endian.h"
 #include "eaglesong.h"
-
+#include <miner.h>
 #define INPUT_LEN (32)
 #define N ((INPUT_LEN+8+1)+3) >> 2
 #define M (INPUT_LEN >> 2)

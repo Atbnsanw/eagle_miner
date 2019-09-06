@@ -88,7 +88,7 @@ ccminer_SOURCES	= elist.h miner.h compat.h \
 
 if !ARCH_ARM64
   # equihash
-  # ccminer_SOURCES += equi/equi.cpp equi/blake2/blake2bx.cpp equi/equihash.cpp equi/cuda_equi.cu
+   ccminer_SOURCES += equi/equi.cpp equi/blake2/blake2bx.cpp equi/equihash.cpp equi/cuda_equi.cu
 
   # scrypt
   ccminer_SOURCES += scrypt.cpp scrypt-jane.cpp \
@@ -126,7 +126,6 @@ endif
 #ccminer_LDFLAGS += -Lequi/lib
 #ccminer_LDADD += -lsodium
 ccminer_LDADD += -lcuda
-ccminer_LDADD += -mavx2
 
 nvcc_ARCH :=
 #nvcc_ARCH += -gencode=arch=compute_75,code=\"sm_75,compute_75\" # CUDA 10 req.
