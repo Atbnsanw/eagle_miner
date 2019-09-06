@@ -272,7 +272,7 @@ void sha256d(unsigned char *hash, const unsigned char *data, int len);
 #define HAVE_SHA256_8WAY 0
 
 struct work;
-
+extern int scanhash_eaglesong(int thr_id, struct work *work, uint32_t max_nonce, unsigned long *hashes_done);
 extern int scanhash_allium(int thr_id, struct work* work, uint32_t max_nonce, unsigned long *hashes_done);
 extern int scanhash_bastion(int thr_id, struct work* work, uint32_t max_nonce, unsigned long *hashes_done);
 extern int scanhash_blake256(int thr_id, struct work* work, uint32_t max_nonce, unsigned long *hashes_done, int8_t blakerounds);
